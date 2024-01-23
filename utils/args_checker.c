@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:12:49 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/23 16:35:19 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/01/23 21:56:55 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	_nsx_args_checker(int ac, char **av)
 	i = 1;
 	j = 0;
 	if (ac < 2 || !av[i][j])
-		_nsx_exit("Invalid Args", -1, 'E');
+		exit(0);
 	while (av[i])
 	{
 		j = 0;
@@ -95,7 +95,7 @@ void	_nsx_num_checker(int ac, char **av)
 	i = 0;
 	list = _nsx_get_list(ac, av);
 	if (!list[1])
-		_nsx_exit("+1 NUMB", 0, 'E');
+		exit(0);
 	while (list[i])
 	{
 		j = 0;
@@ -106,6 +106,6 @@ void	_nsx_num_checker(int ac, char **av)
 		i++;
 	}
 	if (_nsx_is_sorted(list))
-		_nsx_exit("Sorted Numbers !", -1, 'E');
+		exit(0);
 	_nsx_free_2darray(list);
 }

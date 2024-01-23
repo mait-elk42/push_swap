@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   logger.c                                           :+:      :+:    :+:   */
+/*   protect.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 10:32:06 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/23 18:06:25 by mait-elk         ###   ########.fr       */
+/*   Created: 2024/01/23 18:42:01 by mait-elk          #+#    #+#             */
+/*   Updated: 2024/01/23 18:43:41 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	_nsx_exit(char *msg, int status, char type)
+void	*_nsx_p_malloc(size_t size)
 {
-	if (type == 'E')
-		ft_printf("\033[31mError :\n[ %s ]\033[0m\n", msg);
-	else
-		ft_printf("\033[34mMessage :\n[ %s ]\033[0m\n", msg);
-	exit(status);
+	void	*mem;
+
+	mem = malloc(size);
+	if (!mem)
+		return (0);
+	return (mem);
 }

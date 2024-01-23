@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:44:28 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/23 15:18:17 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/01/24 00:40:41 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 
 typedef struct s_nsx_node
 {
-	struct s_nsx_node	*prev;
-	int					number;
+	int					num;
 	struct s_nsx_node	*next;
 }	t_nsx_node;
 
@@ -26,5 +25,17 @@ void	_nsx_num_checker(int ac, char **av);
 void	_nsx_exit(char *msg, int status, char type);
 void	_nsx_free_2darray(char **arr);
 char	**_nsx_get_list(int ac, char **av);
+
+t_nsx_node	*_nsx_lstnew_node(int num);
+void	_nsx_lstadd_atlast(t_nsx_node **head, t_nsx_node *new_node);
+void	_nsx_lstfree(t_nsx_node *head);
+t_nsx_node	*_nsx_2darr2list(char **arr);
+
+void	*_nsx_p_malloc(size_t size);
+
+void	_nsx_instr_sa(t_nsx_node *a);
+void	_nsx_instr_sb(t_nsx_node *a);
+void	_nsx_instr_ss(t_nsx_node *a, t_nsx_node *b);
+void	_nsx_instr_pb(t_nsx_node **a, t_nsx_node **b);
 
 #endif
