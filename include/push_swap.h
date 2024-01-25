@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:44:28 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/25 15:40:43 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:42:23 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,16 @@ void	*_nsx_p_malloc(size_t size);
 void	_nsx_instr_sa(t_nsx_node *a);
 void	_nsx_instr_sb(t_nsx_node *a);
 void	_nsx_instr_ss(t_nsx_node *a, t_nsx_node *b);
+
+void	_nsx_instr_pa(t_nsx_node **a, t_nsx_node **b);
 void	_nsx_instr_pb(t_nsx_node **a, t_nsx_node **b);
+
+void	_nsx_instr_ra(t_nsx_node **a, t_nsx_node **b);
+void	_nsx_instr_rb(t_nsx_node **a, t_nsx_node **b);
+void	_nsx_instr_rr(t_nsx_node **a, t_nsx_node **b);
+
+void	_nsx_instr_rra(t_nsx_node **a, t_nsx_node **b);
+void	_nsx_instr_rrb(t_nsx_node **a, t_nsx_node **b);
+void	_nsx_instr_rrr(t_nsx_node **a, t_nsx_node **b);
 
 #endif
