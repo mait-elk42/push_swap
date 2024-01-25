@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 22:57:35 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/24 00:40:38 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:32:57 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,14 @@ void	_nsx_instr_ss(t_nsx_node *a, t_nsx_node *b)
 
 void	_nsx_instr_pb(t_nsx_node **a, t_nsx_node **b)
 {
-	t_nsx_node	*node;
+	t_nsx_node *first;
+	t_nsx_node *sec;
 
-	node = *a;
-	(*a) = (*a)->next;
-	node->next = 0;
-	_nsx_lstadd_atlast(b, node);
+	first = *a;
+	sec = (*a)->next;
+	first->next = NULL;
+	(*a) = sec;
+	_nsx_lstadd_atbegin(b, first);
+	// (*a) = (*a)->next;
 	ft_printf("pb\n");
 }

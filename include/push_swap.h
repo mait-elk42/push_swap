@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:44:28 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/24 00:40:41 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:40:43 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	**_nsx_get_list(int ac, char **av);
 
 t_nsx_node	*_nsx_lstnew_node(int num);
 void	_nsx_lstadd_atlast(t_nsx_node **head, t_nsx_node *new_node);
+void	_nsx_lstadd_atbegin(t_nsx_node **head, t_nsx_node *new_head);
 void	_nsx_lstfree(t_nsx_node *head);
 t_nsx_node	*_nsx_2darr2list(char **arr);
 

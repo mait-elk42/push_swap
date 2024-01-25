@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:19:21 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/23 22:46:01 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:24:01 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,19 @@ void	_nsx_lstadd_atlast(t_nsx_node **head, t_nsx_node *new_node)
 	while (tmphead->next)
 		tmphead = tmphead->next;
 	tmphead->next = new_node;
+}
+
+void	_nsx_lstadd_atbegin(t_nsx_node **head, t_nsx_node *new_head)
+{
+	if (!new_head)
+		return ;
+	if (!(*head))
+	{
+		*head = new_head;
+		return ;
+	}
+	new_head->next = (*head);
+	(*head) = new_head;
 }
 
 void	_nsx_lstfree(t_nsx_node *head)

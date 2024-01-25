@@ -6,11 +6,11 @@
 #    By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 15:38:27 by mait-elk          #+#    #+#              #
-#    Updated: 2024/01/23 23:02:18 by mait-elk         ###   ########.fr        #
+#    Updated: 2024/01/25 16:25:59 by mait-elk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS= -Wall -Werror -Wextra -g
+CFLAGS= -g
 HPATH= include
 UTILS= utils/args_checker.c utils/logger.c utils/free_all.c utils/reader.c utils/list.c utils/protect.c utils/instr01.c
 O_UTILS= $(UTILS:.c=.o)

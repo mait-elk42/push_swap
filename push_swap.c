@@ -6,27 +6,28 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 22:08:30 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/24 00:43:41 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:37:19 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
-void	_putitemrev(t_nsx_node *head)
+void	_put_ab(t_nsx_node *a, t_nsx_node *b)
 {
-	if (!head)
+	if (!a && !b)
 		return ;
-	_putitemrev(head->next);
-	ft_printf("[%d]\n", head->num);
-}
-
-void	_putitem(t_nsx_node *head)
-{
-	while (head)
+	ft_printf("--------------------------\n");
+	while (a)
 	{
-		ft_printf("[%d]\n", head->num);
-		head = head->next;
+			ft_printf("[A%d]\t", a->num);
+			a = a->next;
+		ft_printf("\n");
 	}
+	ft_printf(" A\t B\n");
+	ft_printf("--------------------------\n");
+
+
 }
 
 int	main(int ac, char **av)
@@ -37,17 +38,28 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
-	numbers = _nsx_get_list(ac, av);
-	_nsx_args_checker(ac, av);
-	_nsx_num_checker(ac, av);
-	ft_printf("ORIGIN\n\n");
-	a = _nsx_2darr2list(numbers);
+	 numbers = _nsx_get_list(ac, av);
+	// _nsx_args_checker(ac, av);
+	// _nsx_num_checker(ac, av);
+	// a = _nsx_2darr2list(numbers);
+	// _put_ab(a, b);
+	// _nsx_instr_pb(&a, &b);
+	// _nsx_instr_pb(&a, &b);
+	// _put_ab(a, b);
+	// _nsx_instr_pb(&a, &b);
+	// // _nsx_instr_sa(a);
+	// // _nsx_instr_pb(&a, &b);
+	// _nsx_exit("Great ! Let's Sort Numbers!!!", 0, 0);
+	_nsx_lstadd_atbegin(&a, _nsx_lstnew_node(3));
+	_nsx_lstadd_atbegin(&a, _nsx_lstnew_node(2));
+	_nsx_lstadd_atbegin(&a, _nsx_lstnew_node(1));
+	// _put_ab(a, b);
 	_nsx_instr_pb(&a, &b);
+	// _put_ab(a, b);
 	_nsx_instr_pb(&a, &b);
-	ft_printf(" A\n");
-	_putitem(a);
-	ft_printf("\n B\n");
-	_putitemrev(b);
-	_nsx_exit("Great ! Let's Sort Numbers!!!", 0, 0);
-	return (0);
+	_put_ab(a, b);
+	// printf("%d\n", a->num);
+	// printf("%d\n", b->num);
+	// printf("%d\n", b->next->num);
+	// printf("%d\n", a->next->num);
 }
