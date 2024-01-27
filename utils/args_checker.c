@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:12:49 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/23 21:56:55 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/01/27 13:36:58 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,22 @@ int	_nsx_is_sorted(char **list)
 	return (i - 1 == ok);
 }
 
+int	overflow_catcher(char *str, int _is_negative)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (_is_negative && _nsx_strlen(str) >= 11 && str[i] > "-2147483648"[i])
+			_nsx_exit("UnderFlow !! ", -1, 'E');
+		if (!_is_negative && _nsx_strlen(str) >= 10 && str[i] > "2147483647"[i])
+			_nsx_exit("OverFlow !! ", -1, 'E');
+		i++;
+	}
+	return (0);
+}
+
 void	_nsx_check_length(char *number)
 {
 	int	l;
@@ -84,6 +100,7 @@ void	_nsx_check_length(char *number)
 	if (number[0] != '-' && (_nsx_strlen(number + l) > 10
 			|| ft_atoi(number) < 0))
 		_nsx_exit("Numbers Should Be <= 2147483647 ", -1, 'E');
+	overflow_catcher(number, number[0] == '-');
 }
 
 void	_nsx_num_checker(int ac, char **av)
