@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:42:01 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/24 03:07:13 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/01/27 18:36:53 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	*_nsx_p_malloc(size_t size)
 
 	mem = malloc(size);
 	if (!mem)
-		_nsx_exit("Malloc Failure", -1, 'E');
+		_nsx_exit_error();
 	return (mem);
 }

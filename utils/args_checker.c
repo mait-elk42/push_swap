@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:12:49 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/27 13:36:58 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/01/27 18:35:56 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	_nsx_therenumbers(char *s)
 		s++;
 	}
 	if (!yes)
-		_nsx_exit("Where's Numbers!", -1, 'E');
+		_nsx_exit_error();
 }
 
 void	_nsx_args_checker(int ac, char **av)
@@ -40,14 +40,14 @@ void	_nsx_args_checker(int ac, char **av)
 	{
 		j = 0;
 		if (!av[i][j])
-			_nsx_exit("Empty Arg!", -1, 'E');
+			_nsx_exit_error();
 		while (av[i][j])
 		{
 			if (!ft_strchr("0123456789 -+", av[i][j]))
-				_nsx_exit("Expected Numbers Only", -1, 'E');
+				_nsx_exit_error();
 			if (((ft_strchr("+-", av[i][j])) && !ft_isdigit(av[i][j +1]))
 					|| (ft_strchr("-+", av[i][j]) && ft_isdigit(av[i][j -1])))
-				_nsx_exit("Syntax Error", -1, 'E');
+				_nsx_exit_error();
 			j++;
 		}
 		_nsx_therenumbers(av[i]);
@@ -79,9 +79,9 @@ int	overflow_catcher(char *str, int _is_negative)
 	while (str[i])
 	{
 		if (_is_negative && _nsx_strlen(str) >= 11 && str[i] > "-2147483648"[i])
-			_nsx_exit("UnderFlow !! ", -1, 'E');
+			_nsx_exit_error();
 		if (!_is_negative && _nsx_strlen(str) >= 10 && str[i] > "2147483647"[i])
-			_nsx_exit("OverFlow !! ", -1, 'E');
+			_nsx_exit_error();
 		i++;
 	}
 	return (0);
@@ -96,10 +96,10 @@ void	_nsx_check_length(char *number)
 		l++;
 	if (number[0] == '-' && (_nsx_strlen(number + l) > 11
 			|| ft_atoi(number) > 0))
-		_nsx_exit("Numbers Should Be >= -2147483648 ", -1, 'E');
+			_nsx_exit_error();
 	if (number[0] != '-' && (_nsx_strlen(number + l) > 10
 			|| ft_atoi(number) < 0))
-		_nsx_exit("Numbers Should Be <= 2147483647 ", -1, 'E');
+			_nsx_exit_error();
 	overflow_catcher(number, number[0] == '-');
 }
 
@@ -119,7 +119,7 @@ void	_nsx_num_checker(int ac, char **av)
 		_nsx_check_length(list[i]);
 		while (j < i)
 			if (ft_atoi(list[i]) == ft_atoi(list[j++]))
-				_nsx_exit("Duplicated Numbers!", -1, 'E');
+				_nsx_exit_error();
 		i++;
 	}
 	if (_nsx_is_sorted(list))

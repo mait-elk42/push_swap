@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:44:28 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/25 18:42:23 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/01/27 18:34:39 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ typedef struct s_nsx_node
 
 void	_nsx_args_checker(int ac, char **av);
 void	_nsx_num_checker(int ac, char **av);
-void	_nsx_exit(char *msg, int status, char type);
+void	_nsx_exit_msg(char *msg);
+void	_nsx_exit_error();
+void	_nsx_exit(int status);
 void	_nsx_free_2darray(char **arr);
 char	**_nsx_get_list(int ac, char **av);
 
