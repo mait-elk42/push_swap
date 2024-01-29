@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:12:49 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/27 18:35:56 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/01/29 10:26:53 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,10 +96,10 @@ void	_nsx_check_length(char *number)
 		l++;
 	if (number[0] == '-' && (_nsx_strlen(number + l) > 11
 			|| ft_atoi(number) > 0))
-			_nsx_exit_error();
+		_nsx_exit_error();
 	if (number[0] != '-' && (_nsx_strlen(number + l) > 10
 			|| ft_atoi(number) < 0))
-			_nsx_exit_error();
+		_nsx_exit_error();
 	overflow_catcher(number, number[0] == '-');
 }
 
