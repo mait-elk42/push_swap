@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:44:28 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/01 13:42:48 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/01 17:58:25 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void		_nsx_instr_rrr(t_nsx_node **a, t_nsx_node **b);
 void	_nsx_sort_2(t_nsx_node **a, t_nsx_node **b);
 void	_nsx_sort_3(t_nsx_node **a, t_nsx_node **b);
 void	_nsx_sort_4(t_nsx_node **a, t_nsx_node **b);
+// void	_nsx_sort_5(t_nsx_node **a, t_nsx_node **b);
 void	_nsx_sort_adv(t_nsx_node **a, t_nsx_node **b);
 
 void	_put_ab(t_nsx_node *a, t_nsx_node *b);

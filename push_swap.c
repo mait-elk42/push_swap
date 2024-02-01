@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 22:08:30 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/01 16:28:00 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/01 18:12:45 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,8 @@ int	main(int ac, char **av)
 		_nsx_sort_3(&a, &b);
 	else if (list_length == 4)
 		_nsx_sort_4(&a, &b);
+	// else if (list_length == 5)
+		// _nsx_sort_5(&a, &b);
 	else
 		_nsx_sort_adv(&a, &b);
 }

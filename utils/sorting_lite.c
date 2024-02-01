@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 22:40:12 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/01 12:33:32 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/01 19:38:22 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,37 @@ void	_nsx_sort_4(t_nsx_node **a, t_nsx_node **b)
 		_nsx_sort_3(a, b);
 		_nsx_instr_pa(a, b);
 	}
-	_put_ab(*a, *b);
+	// _put_ab(*a, *b);
 }
+
+// void	_nsx_sort_5(t_nsx_node **a, t_nsx_node **b)
+// {
+// 	int	min_pos;
+
+// 	min_pos = _get_min_position(*a);
+// 	if (min_pos == 0)
+// 		_nsx_instr_pb(a, b);
+// 	if (min_pos == 1)
+// 		_nsx_instr_sa(*a);
+// 	if (min_pos == 2)
+// 	{
+// 		_nsx_instr_ra(a, b);
+// 		_nsx_instr_ra(a, b);
+// 	}
+// 	if (min_pos == 3)
+// 	{
+// 		_nsx_instr_rra(a, b);
+// 		_nsx_instr_rra(a, b);
+// 	}
+// 	if (min_pos == 4)
+// 	{
+// 		_nsx_instr_rra(a, b);
+// 	}
+// 	if (_is_not_sorted(*a))
+// 	{
+// 		_nsx_instr_pb(a, b);
+// 		_nsx_sort_4(a, b);
+// 		_nsx_instr_pa(a, b);
+// 	}
+// 	// _put_ab(*a, *b);
+// }
