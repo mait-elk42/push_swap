@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 22:57:35 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/29 11:44:01 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/01 11:00:27 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	_nsx_instr_rr(t_nsx_node **a, t_nsx_node **b)
 	(*b) = node->next;
 	node->next = 0;
 	_nsx_lstadd_atlast(b, node);
-	ft_printf("rr\n");
+	ft_printf("rrr\n");
 }
 
 void	_nsx_instr_rra(t_nsx_node **a, t_nsx_node **b)
@@ -59,7 +59,7 @@ void	_nsx_instr_rra(t_nsx_node **a, t_nsx_node **b)
 	_nsx_lstadd_atbegin(a, node->next);
 	*a = node->next;
 	node->next = 0;
-	ft_printf("ra\n");
+	ft_printf("rra\n");
 }
 
 void	_nsx_instr_rrb(t_nsx_node **a, t_nsx_node **b)
@@ -72,5 +72,5 @@ void	_nsx_instr_rrb(t_nsx_node **a, t_nsx_node **b)
 	_nsx_lstadd_atbegin(b, node->next);
 	*b = node->next;
 	node->next = 0;
-	ft_printf("rb\n");
+	ft_printf("rrb\n");
 }

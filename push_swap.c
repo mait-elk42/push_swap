@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 22:08:30 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/29 12:42:34 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/01 10:35:18 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,31 +99,42 @@ int	main(int ac, char **av)
 	t_nsx_node	*a;
 	t_nsx_node	*b;
 	char		**numbers;
+	size_t		list_length;
 
 	a = NULL;
 	b = NULL;
+	list_length = 0;
 	numbers = _nsx_get_list(ac, av);
 	_nsx_args_checker(ac, av);
 	_nsx_num_checker(ac, av);
+	while (numbers[list_length])
+		list_length++;
 	a = _nsx_2darr2list(numbers);
+	// OLD 
 	// _put_ab(a, b);
-	while (_is_not_sorted(a))
-	{
-		int r = _head_isnot_minwhere(a);
-		while (r)
-		{
-			if (r == 1)
-				_nsx_instr_ra(&a, &b);
-			if (r == 2)
-				_nsx_instr_rra(&a, &b);
-			r = _head_isnot_minwhere(a);
-			// _put_ab(a, b);
-		}
-		_nsx_instr_pb(&a, &b);
-		// _put_ab(a, b);
-	}
-	while (b)
-		_nsx_instr_pa(&a, &b);
+	// while (_is_not_sorted(a))
+	// {
+	// 	int r = _head_isnot_minwhere(a);
+	// 	while (r)
+	// 	{
+	// 		if (r == 1)
+	// 			_nsx_instr_ra(&a, &b);
+	// 		if (r == 2)
+	// 			_nsx_instr_rra(&a, &b);
+	// 		r = _head_isnot_minwhere(a);
+	// 		// _put_ab(a, b);
+	// 	}
+	// 	_nsx_instr_pb(&a, &b);
+	// 	// _put_ab(a, b);
+	// }
+	// while (b)
+	// 	_nsx_instr_pa(&a, &b);
 	// _put_ab(a, b);
 	// _nsx_exit_msg("Great ! Let's Sort Numbers!!!");
+	if (list_length == 2)
+		_nsx_sort_2(&a, &b);
+	else if (list_length == 3)
+		_nsx_sort_3(&a, &b);
+	else if (list_length == 4)
+		_nsx_sort_4(&a, &b);
 }

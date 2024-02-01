@@ -66,9 +66,9 @@
     {
       "id": "pointer:pointer",
       "typeName": "pointer",
-      "x": 1627.7732832718666,
-      "y": 4641.521203369901,
-      "lastActivityTimestamp": 1706474232314,
+      "x": -179.67142094263477,
+      "y": 6424.368321717863,
+      "lastActivityTimestamp": 1706791136712,
       "meta": {}
     },
     {
@@ -79,9 +79,9 @@
       "typeName": "page"
     },
     {
-      "x": 3839.0443693481866,
-      "y": -2369.2106917027686,
-      "z": 0.15588483536086775,
+      "x": 530.5881567890166,
+      "y": -6012.985975332428,
+      "z": 0.9521378139578549,
       "meta": {},
       "id": "camera:page:page",
       "typeName": "camera"
@@ -103,12 +103,14 @@
       "followingUserId": null,
       "opacityForNextShape": 1,
       "stylesForNextShape": {
-        "tldraw:color": "black"
+        "tldraw:color": "light-blue",
+        "tldraw:horizontalAlign": "start",
+        "tldraw:geo": "rectangle"
       },
       "brush": null,
       "scribbles": [],
       "cursor": {
-        "type": "cross",
+        "type": "default",
         "rotation": 0
       },
       "isFocusMode": false,
@@ -118,8 +120,8 @@
       "screenBounds": {
         "x": 0,
         "y": 0,
-        "w": 1654.1666259765625,
-        "h": 848.3333129882812
+        "w": 1062.5,
+        "h": 559.1666259765625
       },
       "insets": [
         false,
@@ -8620,7 +8622,6 @@
       "isLocked": false,
       "opacity": 1,
       "meta": {},
-      "id": "shape:0GTh5vlzeNuWuhrl1Cn3D",
       "type": "draw",
       "props": {
         "segments": [
@@ -8780,6 +8781,7 @@
       },
       "parentId": "page:page",
       "index": "b08",
+      "id": "shape:0GTh5vlzeNuWuhrl1Cn3D",
       "typeName": "shape"
     },
     {
@@ -8789,7 +8791,6 @@
       "isLocked": false,
       "opacity": 1,
       "meta": {},
-      "id": "shape:64L3Cn_ozubJWLR7__CkP",
       "type": "draw",
       "props": {
         "segments": [
@@ -8914,6 +8915,266 @@
       },
       "parentId": "page:page",
       "index": "b09",
+      "id": "shape:64L3Cn_ozubJWLR7__CkP",
+      "typeName": "shape"
+    },
+    {
+      "x": 613.5959079735894,
+      "y": 5571.5485768388535,
+      "rotation": 0,
+      "isLocked": false,
+      "opacity": 1,
+      "meta": {},
+      "id": "shape:92kW7Nos2nsqDhLPtwpaj",
+      "type": "text",
+      "props": {
+        "color": "black",
+        "size": "m",
+        "w": 8,
+        "text": "",
+        "font": "draw",
+        "align": "middle",
+        "autoSize": true,
+        "scale": 1
+      },
+      "parentId": "page:page",
+      "index": "b0A",
+      "typeName": "shape"
+    },
+    {
+      "x": -413.485463519551,
+      "y": 6065.488042926009,
+      "rotation": 0,
+      "isLocked": false,
+      "opacity": 1,
+      "meta": {},
+      "id": "shape:J68WyJZzzxdU0yZxcvP5F",
+      "type": "text",
+      "props": {
+        "color": "light-green",
+        "size": "m",
+        "w": 972.73828125,
+        "text": "1 > PUSH TO B AND CHECK IF THE HEAD OF B IS BIGGER MORE THAN HIS NEXT",
+        "font": "draw",
+        "align": "middle",
+        "autoSize": true,
+        "scale": 0.9199150109845675
+      },
+      "parentId": "page:page",
+      "index": "b0B",
+      "typeName": "shape"
+    },
+    {
+      "x": -8.980178134878372,
+      "y": 5992.026039022137,
+      "rotation": 0,
+      "isLocked": false,
+      "opacity": 1,
+      "meta": {},
+      "id": "shape:Qfh9h6CLaFh3tSjIlrOrd",
+      "type": "text",
+      "props": {
+        "color": "black",
+        "size": "m",
+        "w": 70.62890625,
+        "text": "algo :",
+        "font": "draw",
+        "align": "middle",
+        "autoSize": true,
+        "scale": 1
+      },
+      "parentId": "page:page",
+      "index": "b0C",
+      "typeName": "shape"
+    },
+    {
+      "x": -427.59796225869997,
+      "y": 6115.824852191394,
+      "rotation": 0,
+      "isLocked": false,
+      "opacity": 1,
+      "meta": {},
+      "id": "shape:leL0a7wF--FCFnt51JwlI",
+      "type": "text",
+      "props": {
+        "color": "green",
+        "size": "m",
+        "w": 321.546875,
+        "text": "STACK B SHOULD BE LIKE :",
+        "font": "draw",
+        "align": "middle",
+        "autoSize": true,
+        "scale": 1
+      },
+      "parentId": "page:page",
+      "index": "b0D",
+      "typeName": "shape"
+    },
+    {
+      "x": -95.9618387185406,
+      "y": 6128.259157593116,
+      "rotation": 0,
+      "isLocked": false,
+      "opacity": 1,
+      "meta": {},
+      "id": "shape:aWu-0NOTzNposUpwq_Ljv",
+      "type": "text",
+      "props": {
+        "color": "green",
+        "size": "m",
+        "w": 68.20051574707031,
+        "text": ">>>\n>>\n>\n>>\n>>>\n>>>>",
+        "font": "draw",
+        "align": "start",
+        "autoSize": true,
+        "scale": 0.5326278136006891
+      },
+      "parentId": "page:page",
+      "index": "b0E",
+      "typeName": "shape"
+    },
+    {
+      "x": -447.52049006566864,
+      "y": 6237.8535374374715,
+      "rotation": 0,
+      "isLocked": false,
+      "opacity": 1,
+      "meta": {},
+      "id": "shape:lqiT5gPn3D7i0L_NEbz6F",
+      "type": "text",
+      "props": {
+        "color": "light-green",
+        "size": "m",
+        "w": 1049.6328125,
+        "text": "2 > BEFORE PUSH TO A CHECK IF THE HEAD IS THE BIGGER NUMBER IN THE STACJ B",
+        "font": "draw",
+        "align": "start",
+        "autoSize": true,
+        "scale": 0.8929006688113713
+      },
+      "parentId": "page:page",
+      "index": "b0F",
+      "typeName": "shape"
+    },
+    {
+      "x": -338.6013794121843,
+      "y": 6273.486402957864,
+      "rotation": 0,
+      "isLocked": false,
+      "opacity": 1,
+      "meta": {},
+      "id": "shape:K2633BJkmNjsJAdE-4i4d",
+      "type": "text",
+      "props": {
+        "color": "light-green",
+        "size": "m",
+        "w": 731.4719825073967,
+        "text": "IF THE HEAD IS NOT \n        THEN FIND WHERE'S THE BIGGER NUMBER\nIF IT IN THE FIRST NUMBERS YOU HAVE TO DO INSTRACTION RB\nELSE DO INSTRACTION RRB",
+        "font": "draw",
+        "align": "start",
+        "autoSize": true,
+        "scale": 0.9073063327734434
+      },
+      "parentId": "page:page",
+      "index": "b0G",
+      "typeName": "shape"
+    },
+    {
+      "x": -378.23766576443796,
+      "y": 5998.7031739105605,
+      "rotation": 0,
+      "isLocked": false,
+      "opacity": 1,
+      "meta": {},
+      "id": "shape:TRszYj_dncQG-ILsYZQNz",
+      "type": "text",
+      "props": {
+        "color": "light-blue",
+        "size": "m",
+        "w": 296.25390625,
+        "text": "RA , RB , RR > SHIFT UP",
+        "font": "draw",
+        "align": "start",
+        "autoSize": true,
+        "scale": 0.6618017245114534
+      },
+      "parentId": "page:page",
+      "index": "b0H",
+      "typeName": "shape"
+    },
+    {
+      "x": -376.87011845482436,
+      "y": 6030.32987585015,
+      "rotation": 0,
+      "isLocked": false,
+      "opacity": 1,
+      "meta": {},
+      "id": "shape:HXTxFHKki11E-cNPcEa5u",
+      "type": "text",
+      "props": {
+        "color": "light-blue",
+        "size": "m",
+        "w": 401.5496122587432,
+        "text": "RRA , RRB , RRR > SHIFT DOWN",
+        "font": "draw",
+        "align": "start",
+        "autoSize": false,
+        "scale": 0.6446320710219758
+      },
+      "parentId": "page:page",
+      "index": "b0I",
+      "typeName": "shape"
+    },
+    {
+      "x": -400.9045693101533,
+      "y": 5997.8611481975495,
+      "rotation": 0,
+      "isLocked": false,
+      "opacity": 1,
+      "meta": {},
+      "id": "shape:AqShJ_KYDJDuknXbHs_cM",
+      "type": "text",
+      "props": {
+        "color": "light-blue",
+        "size": "m",
+        "w": 8,
+        "text": "",
+        "font": "draw",
+        "align": "start",
+        "autoSize": true,
+        "scale": 1
+      },
+      "parentId": "page:page",
+      "index": "b0J",
+      "typeName": "shape"
+    },
+    {
+      "x": -404.73718530625354,
+      "y": 5996.458867855242,
+      "rotation": 0,
+      "isLocked": false,
+      "opacity": 1,
+      "meta": {},
+      "id": "shape:GUFiyGfdvjj5FB3va-QX8",
+      "type": "geo",
+      "props": {
+        "w": 297.6614461406893,
+        "h": 60.263925596456836,
+        "geo": "rectangle",
+        "color": "light-blue",
+        "labelColor": "black",
+        "fill": "none",
+        "dash": "draw",
+        "size": "m",
+        "font": "draw",
+        "text": "",
+        "align": "start",
+        "verticalAlign": "middle",
+        "growY": 0,
+        "url": ""
+      },
+      "parentId": "page:page",
+      "index": "b0K",
       "typeName": "shape"
     }
   ]

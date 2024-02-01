@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:44:28 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/29 10:26:28 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/01 11:06:23 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,12 @@ void		_nsx_instr_rr(t_nsx_node **a, t_nsx_node **b);
 void		_nsx_instr_rra(t_nsx_node **a, t_nsx_node **b);
 void		_nsx_instr_rrb(t_nsx_node **a, t_nsx_node **b);
 void		_nsx_instr_rrr(t_nsx_node **a, t_nsx_node **b);
+
+void	_nsx_sort_2(t_nsx_node **a, t_nsx_node **b);
+void	_nsx_sort_3(t_nsx_node **a, t_nsx_node **b);
+void	_nsx_sort_4(t_nsx_node **a, t_nsx_node **b);
+
+void	_put_ab(t_nsx_node *a, t_nsx_node *b);
+int		_is_not_sorted(t_nsx_node *a_head);
 
 #endif
