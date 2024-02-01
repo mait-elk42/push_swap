@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 22:08:30 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/01 10:35:18 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:20:36 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	_put_ab(t_nsx_node *a, t_nsx_node *b)
 
 int	_is_not_sorted(t_nsx_node *a_head)
 {
+	if (!a_head)
+		return (-1);
 	while (a_head->next)
 	{
 		if (a_head->num > a_head->next->num)
@@ -44,55 +46,55 @@ int	_is_not_sorted(t_nsx_node *a_head)
 	return (0);
 }
 
-int	lllen(t_nsx_node *a)
-{
-	int	i;
+// int	lllen(t_nsx_node *a)
+// {
+// 	int	i;
 
-	i = 0;
-	while (a)
-	{
-		i++;
-		a = a->next;
-	}
-	return (i);
-}
+// 	i = 0;
+// 	while (a)
+// 	{
+// 		i++;
+// 		a = a->next;
+// 	}
+// 	return (i);
+// }
 
-int _head_isnot_minwhere(t_nsx_node *a)
-{
-	int	min;
-	int len;
-	int	i;
-	int c;
+// int _head_isnot_minwhere(t_nsx_node *a)
+// {
+// 	int	min;
+// 	int len;
+// 	int	i;
+// 	int c;
 
-	min = a->num;
-	len = lllen(a);
-	a = a->next;
-	i = 0;
-	c = 0;
-	if (a == NULL)
-		return (1);
-	while (a && i <= len/2)
-	{
-		if (a->num < min)
-		{
-			c = 1;
-			min = a->num;
-		}
-		a = a->next;
-		i++;
-	}
-	while (a && i <= len)
-	{
-		if (a->num < min)
-		{
-			c = 2;
-			min = a->num;
-		}
-		a = a->next;
-		i++;
-	}
-	return (c);
-}
+// 	min = a->num;
+// 	len = lllen(a);
+// 	a = a->next;
+// 	i = 0;
+// 	c = 0;
+// 	if (a == NULL)
+// 		return (1);
+// 	while (a && i <= len/2)
+// 	{
+// 		if (a->num < min)
+// 		{
+// 			c = 1;
+// 			min = a->num;
+// 		}
+// 		a = a->next;
+// 		i++;
+// 	}
+// 	while (a && i <= len)
+// 	{
+// 		if (a->num < min)
+// 		{
+// 			c = 2;
+// 			min = a->num;
+// 		}
+// 		a = a->next;
+// 		i++;
+// 	}
+// 	return (c);
+// }
 
 int	main(int ac, char **av)
 {
@@ -137,4 +139,6 @@ int	main(int ac, char **av)
 		_nsx_sort_3(&a, &b);
 	else if (list_length == 4)
 		_nsx_sort_4(&a, &b);
+	else
+		_nsx_sort_adv(&a, &b);
 }
