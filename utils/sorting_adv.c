@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:41:01 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/01 14:27:21 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:16:08 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,34 +27,34 @@ static int	lllen(t_nsx_node *a)
 
 static int _head_isnot_biggerwhere(t_nsx_node *head)
 {
-	int	min;
+	int	max;
 	int len;
 	int	i;
 	int c;
 
-	min = head->num;
+	max = head->num;
 	len = lllen(head);
-	head = head->next;
 	i = 0;
 	c = 0;
-	if (head == NULL)
-		return (1);
+	if (head == NULL || head->next == NULL)
+		return (0);
+	head = head->next;
 	while (head && i <= len/2)
 	{
-		if (head->num < min)
+		if (head->num > max)
 		{
 			c = 1;
-			min = head->num;
+			max = head->num;
 		}
 		head = head->next;
 		i++;
 	}
 	while (head && i <= len)
 	{
-		if (head->num < min)
+		if (head->num > max)
 		{
 			c = 2;
-			min = head->num;
+			max = head->num;
 		}
 		head = head->next;
 		i++;
@@ -65,25 +65,20 @@ static int _head_isnot_biggerwhere(t_nsx_node *head)
 void	_nsx_sort_adv(t_nsx_node **a, t_nsx_node **b)
 {
 	int		head_is_bigger;
-	(void)a;
-	(void)b;
 	while (*a)
 	{
 		_nsx_instr_pb(a, b);
 		if ((*b) && (*b)->next && (*b)->next->num > (*b)->num)
 			_nsx_instr_rb(a, b);
 	}
-	// while ((*b))
-	// {
-	// 	if (_head_isnot_biggerwhere(*b) == 1)
-	// 		_nsx_instr_rb(a, b);
-	// 	else
-	// 	if (_head_isnot_biggerwhere(*b) == 2)
-	// 		_nsx_instr_rrb(a, b);
-	// 	else
-	// 	if (_head_isnot_biggerwhere(*b) == 0)
-	// 		_nsx_instr_pa(a, b);
-	// }
-	ft_printf("%d\n", _head_isnot_biggerwhere(*b));
-	_put_ab(*a, *b);
+	while ((*b))
+	{
+		int bigger = _head_isnot_biggerwhere(*b);
+		if (bigger == 1)
+			_nsx_instr_rb(a, b);
+		if (bigger == 2)
+			_nsx_instr_rrb(a, b);
+		if (bigger == 0)
+			_nsx_instr_pa(a, b);
+	}
 }

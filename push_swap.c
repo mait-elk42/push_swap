@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 22:08:30 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/01 14:20:36 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:28:00 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int	_is_not_sorted(t_nsx_node *a_head)
 // int	lllen(t_nsx_node *a)
 // {
 // 	int	i;
-
 // 	i = 0;
 // 	while (a)
 // 	{
@@ -65,7 +64,6 @@ int	_is_not_sorted(t_nsx_node *a_head)
 // 	int len;
 // 	int	i;
 // 	int c;
-
 // 	min = a->num;
 // 	len = lllen(a);
 // 	a = a->next;
