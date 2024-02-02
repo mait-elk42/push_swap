@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:44:28 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/01 17:58:25 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/02 12:39:16 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 typedef struct s_nsx_node
 {
+	int					index;
 	int					num;
 	struct s_nsx_node	*next;
 }	t_nsx_node;
@@ -36,9 +37,9 @@ t_nsx_node	*_nsx_2darr2list(char **arr);
 
 void		*_nsx_p_malloc(size_t size);
 
-void		_nsx_instr_sa(t_nsx_node *a);
-void		_nsx_instr_sb(t_nsx_node *a);
-void		_nsx_instr_ss(t_nsx_node *a, t_nsx_node *b);
+void		_nsx_instr_sa(t_nsx_node **a);
+void		_nsx_instr_sb(t_nsx_node **a);
+void		_nsx_instr_ss(t_nsx_node **a, t_nsx_node **b);
 
 void		_nsx_instr_pa(t_nsx_node **a, t_nsx_node **b);
 void		_nsx_instr_pb(t_nsx_node **a, t_nsx_node **b);

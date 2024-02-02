@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 22:08:30 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/01 18:12:45 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/02 12:53:14 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ void	_put_ab(t_nsx_node *a, t_nsx_node *b)
 	ft_printf(" A\n");
 	while (a)
 	{
-		ft_printf("[%d]\n", a->num);
+		ft_printf("[%d] <%d>\n", a->num, a->index);
 		a = a->next;
 	}
 	ft_printf(" B\n");
 	while (b)
 	{
-		ft_printf("[%d]\n", b->num);
+		ft_printf("[%d] <%d>\n", b->num, b->index);
 		b = b->next;
 	}
 	ft_printf("\n--------------------------\n");

@@ -6,50 +6,57 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 22:57:35 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/29 10:25:34 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/02 12:31:21 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	_nsx_instr_sa(t_nsx_node *a)
+void	_nsx_instr_sa(t_nsx_node **a)
 {
-	int	tmp;
+	t_nsx_node	*tmp;
 
-	if (!a || !a->next)
+	if (!a || !(*a) || !(*a)->next)
 		return ;
-	tmp = a->next->num;
-	a->next->num = a->num;
-	a->num = tmp;
+	tmp = (*a);
+	(*a) = (*a)->next;
+	tmp->next = (*a)->next;
+	(*a)->next = tmp;
+	
 	ft_printf("sa\n");
 }
 
-void	_nsx_instr_sb(t_nsx_node *b)
+void	_nsx_instr_sb(t_nsx_node **b)
 {
-	int	tmp;
+	t_nsx_node	*tmp;
 
-	if (!b || !b->next)
+	if (!b || !(*b) || !(*b)->next)
 		return ;
-	tmp = b->next->num;
-	b->next->num = b->num;
-	b->num = tmp;
+	tmp = (*b);
+	(*b) = (*b)->next;
+	tmp->next = (*b)->next;
+	(*b)->next = tmp;
+	
 	ft_printf("sb\n");
 }
 
-void	_nsx_instr_ss(t_nsx_node *a, t_nsx_node *b)
+void	_nsx_instr_ss(t_nsx_node **a, t_nsx_node **b)
 {
-	int	tmp;
+	t_nsx_node	*tmp;
 
-	if (!a || !a->next)
+	if (!a || !(*a) || !(*a)->next)
 		return ;
-	tmp = a->next->num;
-	a->next->num = a->num;
-	a->num = tmp;
-	if (!b || !b->next)
+	if (!b || !(*b) || !(*b)->next)
 		return ;
-	tmp = b->next->num;
-	b->next->num = b->num;
-	b->num = tmp;
+	tmp = (*a);
+	(*a) = (*a)->next;
+	tmp->next = (*a)->next;
+	(*a)->next = tmp;
+
+	tmp = (*b);
+	(*b) = (*b)->next;
+	tmp->next = (*b)->next;
+	(*b)->next = tmp;
 	ft_printf("ss\n");
 }
 

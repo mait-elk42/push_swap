@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:41:01 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/01 20:13:02 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/02 23:54:38 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,63 +25,49 @@ static int	lllen(t_nsx_node *a)
 	return (i);
 }
 
-static int _head_isnot_biggerwhere(t_nsx_node *head)
+void	index_mylist(t_nsx_node *head)
 {
-	int	max;
-	int len;
-	int	i;
-	int c;
+	t_nsx_node	*save_head;
+	t_nsx_node	*tmp;
 
-	max = head->num;
-	len = lllen(head);
-	i = 0;
-	c = 0;
-	if (head == NULL || head->next == NULL)
-		return (0);
-	head = head->next;
-	while (head && i <= len/2)
+	save_head = head;
+	while (head)
 	{
-		if (head->num > max)
+		tmp = save_head;
+		while (tmp)
 		{
-			c = 1;
-			max = head->num;
+			if (head->num > tmp->num)
+				head->index++;
+			tmp = tmp->next;
 		}
 		head = head->next;
-		i++;
 	}
-	while (head && i <= len)
-	{
-		if (head->num > max)
-		{
-			c = 2;
-			max = head->num;
-		}
-		head = head->next;
-		i++;
-	}
-	return (c);
 }
 
 void	_nsx_sort_adv(t_nsx_node **a, t_nsx_node **b)
 {
-	int		head_is_bigger;
-	while (*a)
+	int pivo1;
+	int pivo2;
+
+	pivo2 = 0;
+	index_mylist(*a);
+	while (lllen(*a) > 3)
 	{
-		_nsx_instr_pb(a, b);
-		if ((*b) && (*b)->next && (*b)->next->next && (*b)->num < (*b)->next->num && (*b)->next->next->num > (*b)->num)
-			_nsx_instr_sb(*a);
-		else if ((*b) && (*b)->next && (*b)->next->num > (*b)->num)
-			_nsx_instr_rb(a, b);
+		pivo1 = lllen(*a) / 6 + pivo2;
+		pivo2 += lllen(*a) / 3;
+		// ft_printf("[p1 : %d | p2 : %d]\n", pivo1, pivo2);
+		// _put_ab(*a, *b);
+		while (lllen(*b) < pivo2)
+		{
+			if ((*a)->index < pivo2)
+			{
+				_nsx_instr_pb(a, b);
+				if ((*b)->index < pivo1)
+					_nsx_instr_rb(a, b);
+			}
+			else
+				_nsx_instr_ra(a, b);
+		}
 	}
-	while ((*b))
-	{
-		int bigger = _head_isnot_biggerwhere(*b);
-		if (bigger == 1)
-			_nsx_instr_rb(a, b);
-		if (bigger == 2)
-			_nsx_instr_rrb(a, b);
-		if (bigger == 0)
-			_nsx_instr_pa(a, b);
-	}
-	_put_ab(*a, *b);
+	// _nsx_sort_3(a, b);
 }
