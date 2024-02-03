@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:41:01 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/03 07:04:08 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/03 20:31:36 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,33 +44,54 @@ void	index_mylist(t_nsx_node *head)
 	}
 }
 
+int	where_biggest(t_nsx_node *head)
+{
+	int i = 0;
+	int len = lllen(head)-1;
+	while (head)
+	{
+		if (head->index == len)
+			break;
+		i++;
+		head = head->next;
+	}
+	return (i);
+}
+
 void	_nsx_sort_adv(t_nsx_node **a, t_nsx_node **b)
 {
-	int pivo1;
-	int pivo2;
+	int rotateable;
+	int max;
 
-	pivo2 = 0;
 	index_mylist(*a);
 	while (lllen(*a) > 3)
 	{
-		pivo1 = lllen(*a) / 6 + pivo2;
-		pivo2 += pivo1 / 3;
-		while (lllen(*b) < pivo2)
+		max = lllen(*a) / 3 + lllen(*b);
+		rotateable = lllen(*a) / 6 + lllen(*b);
+		while (lllen(*b) < max)
 		{
-			if ((*a)->index < pivo2)
+			if ((*a)->index < max)
 			{
 				_nsx_instr_pb(a, b);
-				if ((*b)->index < pivo1)
+				if ((*b)->index < rotateable)
 					_nsx_instr_rb(a, b);
 			}
 			else
 				_nsx_instr_ra(a, b);
 		}
 	}
-	// _nsx_sort_3(a, b);
-	while (*b)
+	_nsx_sort_3(a, b);
+	while ((*b))
 	{
+		int index = where_biggest(*b);
+		int len = lllen(*b) - 1;
+		while ((*b)->index != lllen(*b) - 1)
+		{
+			if (index >= len / 2)
+				_nsx_instr_rrb(a, b);
+			else
+				_nsx_instr_rb(a, b);
+		}
 		_nsx_instr_pa(a, b);
 	}
-	
 }
