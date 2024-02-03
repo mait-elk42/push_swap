@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:41:01 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/02 23:54:38 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/03 07:04:08 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,7 @@ void	_nsx_sort_adv(t_nsx_node **a, t_nsx_node **b)
 	while (lllen(*a) > 3)
 	{
 		pivo1 = lllen(*a) / 6 + pivo2;
-		pivo2 += lllen(*a) / 3;
-		// ft_printf("[p1 : %d | p2 : %d]\n", pivo1, pivo2);
-		// _put_ab(*a, *b);
+		pivo2 += pivo1 / 3;
 		while (lllen(*b) < pivo2)
 		{
 			if ((*a)->index < pivo2)
@@ -70,4 +68,9 @@ void	_nsx_sort_adv(t_nsx_node **a, t_nsx_node **b)
 		}
 	}
 	// _nsx_sort_3(a, b);
+	while (*b)
+	{
+		_nsx_instr_pa(a, b);
+	}
+	
 }
