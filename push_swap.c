@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 18:38:04 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/04 18:46:03 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/05 00:11:18 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,19 @@ int	_is_not_sorted(t_nsx_node *a_head)
 	return (0);
 }
 
+int	_is_not_reversed(t_nsx_node *a_head)
+{
+	if (!a_head)
+		return (-1);
+	while (a_head->next)
+	{
+		if (a_head->num < a_head->next->num)
+			return (1);
+		a_head = a_head->next;
+	}
+	return (0);
+}
+
 int	main(int ac, char **av)
 {
 	t_nsx_node	*a;
@@ -68,6 +81,9 @@ int	main(int ac, char **av)
 		_nsx_sort_3(&a);
 	else if (list_length == 4)
 		_nsx_sort_4(&a, &b);
+	else
+	if (!_is_not_reversed(a))
+		_nsx_sort_reversed(&a, &b);
 	else
 		_nsx_sort_adv(&a, &b);
 }

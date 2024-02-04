@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:44:28 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/04 18:45:26 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/05 00:11:11 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ void		_nsx_sort_2(t_nsx_node **a);
 void		_nsx_sort_3(t_nsx_node **a);
 void		_nsx_sort_4(t_nsx_node **a, t_nsx_node **b);
 void		_nsx_sort_adv(t_nsx_node **a, t_nsx_node **b);
+void		_nsx_sort_reversed(t_nsx_node **a, t_nsx_node **b);
+int			lllen(t_nsx_node *a);
 
 void		_put_ab(t_nsx_node *a, t_nsx_node *b);
 int			_is_not_sorted(t_nsx_node *a_head);

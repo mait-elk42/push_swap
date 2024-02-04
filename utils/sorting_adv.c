@@ -6,13 +6,13 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:41:01 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/04 20:00:04 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/04 23:59:14 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static int	lllen(t_nsx_node *a)
+int	lllen(t_nsx_node *a)
 {
 	int	i;
 
@@ -82,51 +82,16 @@ void	_part2(t_nsx_node **a, t_nsx_node **b)
 	}
 }
 
-int	bestmv_is_up(t_nsx_node *a, int max)
-{
-	int	i;
-	int	len;
-	int	from_start;
-	int	from_end;
-
-	i = -1;
-	from_start = -1;
-	from_end = -1;
-	len = lllen(a);
-	while (a && i < len/2)
-	{
-		if (a->index < max && from_start < 0)
-			from_start = i;
-		i++;
-		a = a->next;
-	}
-	while (a && i < len)
-	{
-		if (a->index < max)
-			from_end = i;
-		i++;
-		a = a->next;
-	}
-	if (from_end == -1)
-		from_end = len;
-	if (from_start == -1)
-		from_start = 0;
-	// ft_printf("<s%d e%d>\n", from_start, from_end);
-	return (from_start < len-from_end + 1);
-}
-
 void	_nsx_sort_adv(t_nsx_node **a, t_nsx_node **b)
 {
 	int	rotateable;
 	int	max;
-	int best_move_isup;
 
 	index_mylist(*a);
 	while (lllen(*a) > 3)
 	{
 		max = lllen(*a) / 3 + lllen(*b);
 		rotateable = lllen(*a) / 6 + lllen(*b);
-		best_move_isup = bestmv_is_up(*a, max);
 		while (lllen(*b) < max)
 		if ((*a)->index < max)
 		{
@@ -136,11 +101,7 @@ void	_nsx_sort_adv(t_nsx_node **a, t_nsx_node **b)
 		}
 		else
 		{
-			if (best_move_isup)
-				_nsx_instr_rra(a);
-			else
-				_nsx_instr_ra(a);
-				
+			_nsx_instr_ra(a);
 		}
 	}
 	_part2(a, b);
