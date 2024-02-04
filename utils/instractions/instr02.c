@@ -6,13 +6,13 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 22:57:35 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/01 11:00:27 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/04 18:43:06 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	_nsx_instr_ra(t_nsx_node **a, t_nsx_node **b)
+void	_nsx_instr_ra(t_nsx_node **a)
 {
 	t_nsx_node	*node;
 
@@ -23,7 +23,7 @@ void	_nsx_instr_ra(t_nsx_node **a, t_nsx_node **b)
 	ft_printf("ra\n");
 }
 
-void	_nsx_instr_rb(t_nsx_node **a, t_nsx_node **b)
+void	_nsx_instr_rb(t_nsx_node **b)
 {
 	t_nsx_node	*node;
 
@@ -46,10 +46,10 @@ void	_nsx_instr_rr(t_nsx_node **a, t_nsx_node **b)
 	(*b) = node->next;
 	node->next = 0;
 	_nsx_lstadd_atlast(b, node);
-	ft_printf("rrr\n");
+	ft_printf("rr\n");
 }
 
-void	_nsx_instr_rra(t_nsx_node **a, t_nsx_node **b)
+void	_nsx_instr_rra(t_nsx_node **a)
 {
 	t_nsx_node	*node;
 
@@ -62,7 +62,7 @@ void	_nsx_instr_rra(t_nsx_node **a, t_nsx_node **b)
 	ft_printf("rra\n");
 }
 
-void	_nsx_instr_rrb(t_nsx_node **a, t_nsx_node **b)
+void	_nsx_instr_rrb(t_nsx_node **b)
 {
 	t_nsx_node	*node;
 

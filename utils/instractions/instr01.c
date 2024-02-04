@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 22:57:35 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/02 12:31:21 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/04 18:40:40 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	_nsx_instr_sa(t_nsx_node **a)
 	(*a) = (*a)->next;
 	tmp->next = (*a)->next;
 	(*a)->next = tmp;
-	
 	ft_printf("sa\n");
 }
 
@@ -36,7 +35,6 @@ void	_nsx_instr_sb(t_nsx_node **b)
 	(*b) = (*b)->next;
 	tmp->next = (*b)->next;
 	(*b)->next = tmp;
-	
 	ft_printf("sb\n");
 }
 
@@ -52,7 +50,6 @@ void	_nsx_instr_ss(t_nsx_node **a, t_nsx_node **b)
 	(*a) = (*a)->next;
 	tmp->next = (*a)->next;
 	(*a)->next = tmp;
-
 	tmp = (*b);
 	(*b) = (*b)->next;
 	tmp->next = (*b)->next;

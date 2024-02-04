@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/20 22:08:30 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/02 12:53:14 by mait-elk         ###   ########.fr       */
+/*   Created: 2024/02/04 18:38:04 by mait-elk          #+#    #+#             */
+/*   Updated: 2024/02/04 18:46:03 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,54 +46,6 @@ int	_is_not_sorted(t_nsx_node *a_head)
 	return (0);
 }
 
-// int	lllen(t_nsx_node *a)
-// {
-// 	int	i;
-// 	i = 0;
-// 	while (a)
-// 	{
-// 		i++;
-// 		a = a->next;
-// 	}
-// 	return (i);
-// }
-
-// int _head_isnot_minwhere(t_nsx_node *a)
-// {
-// 	int	min;
-// 	int len;
-// 	int	i;
-// 	int c;
-// 	min = a->num;
-// 	len = lllen(a);
-// 	a = a->next;
-// 	i = 0;
-// 	c = 0;
-// 	if (a == NULL)
-// 		return (1);
-// 	while (a && i <= len/2)
-// 	{
-// 		if (a->num < min)
-// 		{
-// 			c = 1;
-// 			min = a->num;
-// 		}
-// 		a = a->next;
-// 		i++;
-// 	}
-// 	while (a && i <= len)
-// 	{
-// 		if (a->num < min)
-// 		{
-// 			c = 2;
-// 			min = a->num;
-// 		}
-// 		a = a->next;
-// 		i++;
-// 	}
-// 	return (c);
-// }
-
 int	main(int ac, char **av)
 {
 	t_nsx_node	*a;
@@ -110,35 +62,12 @@ int	main(int ac, char **av)
 	while (numbers[list_length])
 		list_length++;
 	a = _nsx_2darr2list(numbers);
-	// OLD 
-	// _put_ab(a, b);
-	// while (_is_not_sorted(a))
-	// {
-	// 	int r = _head_isnot_minwhere(a);
-	// 	while (r)
-	// 	{
-	// 		if (r == 1)
-	// 			_nsx_instr_ra(&a, &b);
-	// 		if (r == 2)
-	// 			_nsx_instr_rra(&a, &b);
-	// 		r = _head_isnot_minwhere(a);
-	// 		// _put_ab(a, b);
-	// 	}
-	// 	_nsx_instr_pb(&a, &b);
-	// 	// _put_ab(a, b);
-	// }
-	// while (b)
-	// 	_nsx_instr_pa(&a, &b);
-	// _put_ab(a, b);
-	// _nsx_exit_msg("Great ! Let's Sort Numbers!!!");
 	if (list_length == 2)
-		_nsx_sort_2(&a, &b);
+		_nsx_sort_2(&a);
 	else if (list_length == 3)
-		_nsx_sort_3(&a, &b);
+		_nsx_sort_3(&a);
 	else if (list_length == 4)
 		_nsx_sort_4(&a, &b);
-	// else if (list_length == 5)
-		// _nsx_sort_5(&a, &b);
 	else
 		_nsx_sort_adv(&a, &b);
 }
