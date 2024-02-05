@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 22:40:12 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/04 18:45:40 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/05 15:28:33 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,3 +79,29 @@ void	_nsx_sort_4(t_nsx_node **a, t_nsx_node **b)
 		_nsx_instr_pa(a, b);
 	}
 }
+
+// void	_nsx_sort_5(t_nsx_node **a, t_nsx_node **b)
+// {
+// 	int	min_pos;
+
+	
+// 	min_pos = _get_min_position(*a);
+// 	if (min_pos == 0)
+// 		_nsx_instr_pb(a, b);
+// 	if (min_pos == 1)
+// 		_nsx_instr_sa(a);
+// 	if (min_pos == 2)
+// 	{
+// 		_nsx_instr_ra(a);
+// 		_nsx_instr_ra(a);
+// 	}
+// 	if (min_pos == 3)
+// 		_nsx_instr_rra(a);
+// 	if (_is_not_sorted(*a))
+// 	{
+// 		_nsx_instr_pb(a, b);
+// 		_nsx_sort_3(a);
+// 		_nsx_instr_pa(a, b);
+// 		_nsx_instr_pa(a, b);
+// 	}
+// }
