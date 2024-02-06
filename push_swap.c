@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 18:38:04 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/05 15:28:50 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/06 11:39:40 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,8 @@ int	main(int ac, char **av)
 		_nsx_sort_2(&a);
 	else if (list_length == 3)
 		_nsx_sort_3(&a);
-	else if (list_length == 4)
-		_nsx_sort_4(&a, &b);
-	// else if (list_length == 5)
-	// 	_nsx_sort_5(&a, &b);
+	else if (list_length == 4 || list_length == 5)
+		_nsx_sort_4_5(&a, &b);
 	else if (!_is_not_reversed(a))
 		_nsx_sort_reversed(&a, &b);
 	else

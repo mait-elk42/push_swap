@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:44:28 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/05 15:28:38 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/06 10:46:57 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_nsx_node	*_nsx_2darr2list(char **arr);
 void		*_nsx_p_malloc(size_t size);
 
 void		_nsx_instr_sa(t_nsx_node **a);
-void		_nsx_instr_sb(t_nsx_node **a);
+void		_nsx_instr_sb(t_nsx_node **b);
 void		_nsx_instr_ss(t_nsx_node **a, t_nsx_node **b);
 
 void		_nsx_instr_pa(t_nsx_node **a, t_nsx_node **b);
@@ -54,8 +54,7 @@ void		_nsx_instr_rrr(t_nsx_node **a, t_nsx_node **b);
 
 void		_nsx_sort_2(t_nsx_node **a);
 void		_nsx_sort_3(t_nsx_node **a);
-void		_nsx_sort_4(t_nsx_node **a, t_nsx_node **b);
-// void		_nsx_sort_5(t_nsx_node **a, t_nsx_node **b);
+void		_nsx_sort_4_5(t_nsx_node **a, t_nsx_node **b);
 void		_nsx_sort_adv(t_nsx_node **a, t_nsx_node **b);
 void		_nsx_sort_reversed(t_nsx_node **a, t_nsx_node **b);
 int			lllen(t_nsx_node *a);
