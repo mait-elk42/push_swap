@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:41:01 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/06 17:31:51 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/07 00:25:25 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ t_nsx_node	*_get_last_node(t_nsx_node *head)
 	return (head);
 }
 
-int zed(t_nsx_node *b, int wanted)
+int get_wanted_index(t_nsx_node *b, int wanted)
 {
 	int i;
 
@@ -85,64 +85,30 @@ int zed(t_nsx_node *b, int wanted)
 
 void	_part2(t_nsx_node **a, t_nsx_node **b)
 {
-	// int	index;
-	// int	len;
 	int	yes;
 
 	yes = 0;
-	_nsx_sort_4_5(a, b);
-	while (*b)
-	{
-		// index = where_biggest(*b);
-		// len = lllen(*b) - 1;
-		// while ((*b)->index != lllen(*b) - 1)
-		// {
-		// 	if (index > len / 2)
-		// 		_nsx_instr_rrb(b);
-		// 	else
-		// 		_nsx_instr_rb(b);
-		// }
-		// _nsx_instr_pa(a, b);
-		if ((*b)->index == (*a)->index - 1)
+	_nsx_sort_3(a);
+	while (*b || _is_not_sorted(*a))
+		if ((*b) && (*b)->index == (*a)->index - 1)
 			_nsx_instr_pa(a, b);
-		else if (_get_last_node(*b)->index == (*a)->index - 1)
-		{
-			_nsx_instr_rrb(b);
-			_nsx_instr_pa(a, b);
-		}
-		else if (_get_last_node(*a)->index == (*a)->index - 1)
-		{
-			_nsx_instr_rra(a);
-			yes--;	
-		}
-		else if (!yes)
-		{
-			_nsx_instr_pa(a, b);
-			_nsx_instr_ra(a);
-			yes++;
-		}
-		else if (yes && _get_last_node(*a)->index < (*b)->index)
-		{
-			_nsx_instr_pa(a, b);
-			_nsx_instr_ra(a);
-			yes++;
-		}
-		else if (yes && _get_last_node(*a)->index < _get_last_node(*b)->index)
-		{
-			_nsx_instr_rrb(b);
-			_nsx_instr_pa(a, b);
-			_nsx_instr_ra(a);
-			yes++;
-		}
+		else if ((*b) && _get_last_node(*b)->index == (*a)->index - 1)
+			(_nsx_instr_rrb(b), _nsx_instr_pa(a, b));
+		else if (yes && _get_last_node(*a)->index == (*a)->index - 1)
+			(_nsx_instr_rra(a), yes--);
+		else if (yes == 0)
+			(_nsx_instr_pa(a, b), _nsx_instr_ra(a), yes++);
+		else if ((*b) && yes && _get_last_node(*a)->index < (*b)->index)
+			(_nsx_instr_pa(a, b), _nsx_instr_ra(a), yes++);
+		else if ((*b) && yes && _get_last_node(*a)->index < _get_last_node(*b)->index)
+			(_nsx_instr_rrb(b), _nsx_instr_pa(a, b), _nsx_instr_ra(a), yes++);
 		else
 		{
-			int pos = zed(*b, (*a)->index - 1);
-			if (pos < lllen(*b) / 2)
+			if (get_wanted_index(*b, (*a)->index - 1) < lllen(*b) / 2)
 				_nsx_instr_rb(b);
 			else
 				_nsx_instr_rrb(b);
 		}
-	}
 }
 
 void	_nsx_sort_adv(t_nsx_node **a, t_nsx_node **b)
@@ -151,10 +117,10 @@ void	_nsx_sort_adv(t_nsx_node **a, t_nsx_node **b)
 	int	max;
 
 	index_mylist(*a);
-	while (lllen(*a) > 5)
+	while (lllen(*a) > 3)
 	{
-		max = lllen(*a) / 5 + lllen(*b);
-		rotateable = lllen(*a) / 10 + lllen(*b);
+		max = lllen(*a) / 3 + lllen(*b);
+		rotateable = lllen(*a) / 6 + lllen(*b);
 		while (lllen(*b) < max)
 			if ((*a)->index < max)
 			{
