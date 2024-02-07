@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   args_checker.c                                     :+:      :+:    :+:   */
+/*   args_checker_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:12:49 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/07 04:48:52 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/07 04:49:08 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include <push_swap_bonus.h>
 
 void	_nsx_therenumbers(char *s)
 {
@@ -116,7 +116,5 @@ void	_nsx_num_checker(int ac, char **av)
 				_nsx_exit_error();
 		i++;
 	}
-	if (_nsx_is_sorted(list))
-		exit(0);
 	_nsx_free_2darray(list);
 }

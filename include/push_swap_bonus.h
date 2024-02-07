@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:44:28 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/07 03:27:25 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/07 04:42:42 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 # include "../libft_advanced/libft.h"
 
 typedef struct s_nsx_node
@@ -62,7 +62,7 @@ t_nsx_node	*_get_last_node(t_nsx_node *head);
 int			list_length(t_nsx_node *head);
 int			get_wanted_index(t_nsx_node *b, int wanted);
 
-int			_is_not_sorted(t_nsx_node *a_head);
+int			_is_sorted(t_nsx_node *a_head);
 int			_is_not_reversed(t_nsx_node *a_head);
 
 #endif

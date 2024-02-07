@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting_adv.c                                      :+:      :+:    :+:   */
+/*   sorting_adv_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:41:01 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/07 06:36:36 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/07 04:41:57 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include <push_swap_bonus.h>
 
 void	index_mylist(t_nsx_node *head)
 {
@@ -37,7 +37,7 @@ void	_part2(t_nsx_node **a, t_nsx_node **b)
 
 	yes = 0;
 	_nsx_sort_3(a);
-	while (*b || _is_not_sorted(*a))
+	while (*b || !_is_sorted(*a))
 		if ((*b) && (*b)->index == (*a)->index - 1)
 			_nsx_instr_pa(a, b);
 	else if ((*b) && _get_last_node(*b)->index == (*a)->index - 1)
