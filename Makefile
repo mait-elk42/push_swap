@@ -6,7 +6,7 @@
 #    By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 15:38:27 by mait-elk          #+#    #+#              #
-#    Updated: 2024/02/07 03:32:55 by mait-elk         ###   ########.fr        #
+#    Updated: 2024/02/07 06:45:12 by mait-elk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,11 @@ CFLAGS= -Wall -Werror -Wextra
 HPATH= include
 UTILS= utils/args_checker.c utils/logger.c utils/free_all.c utils/reader.c \
 	utils/list.c utils/protect.c utils/instractions/instr01.c utils/instractions/instr02.c \
-	utils/instractions/instr03.c utils/sorting_lite.c utils/sorting_adv.c utils/sorting_rev.c \
+	utils/instractions/instr03.c utils/sorting_lite.c utils/sorting_adv.c \
 	utils/list_controller.c
 B_UTILS= utils_bonus/args_checker_bonus.c utils_bonus/logger_bonus.c utils_bonus/free_all_bonus.c utils_bonus/reader_bonus.c \
 	utils_bonus/list_bonus.c utils_bonus/protect_bonus.c utils_bonus/instractions/instr01_bonus.c utils_bonus/instractions/instr02_bonus.c \
-	utils_bonus/instractions/instr03_bonus.c utils_bonus/sorting_lite_bonus.c utils_bonus/sorting_adv_bonus.c utils_bonus/sorting_rev_bonus.c \
+	utils_bonus/instractions/instr03_bonus.c utils_bonus/sorting_lite_bonus.c utils_bonus/sorting_adv_bonus.c \
 	utils_bonus/list_controller_bonus.c
 O_UTILS= $(UTILS:.c=.o)
 B_O_UTILS= $(B_UTILS:.c=.o)
