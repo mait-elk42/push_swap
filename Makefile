@@ -6,7 +6,7 @@
 #    By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 15:38:27 by mait-elk          #+#    #+#              #
-#    Updated: 2024/02/05 00:02:01 by mait-elk         ###   ########.fr        #
+#    Updated: 2024/02/07 01:28:11 by mait-elk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ CFLAGS= -Wall -Werror -Wextra
 HPATH= include
 UTILS= utils/args_checker.c utils/logger.c utils/free_all.c utils/reader.c \
 	utils/list.c utils/protect.c utils/instractions/instr01.c utils/instractions/instr02.c \
-	utils/instractions/instr03.c utils/sorting_lite.c utils/sorting_adv.c utils/sorting_rev.c
+	utils/instractions/instr03.c utils/sorting_lite.c utils/sorting_adv.c utils/sorting_rev.c \
+	utils/list_controller.c
 O_UTILS= $(UTILS:.c=.o)
 LIBFT=libft_advanced/libft.a
 PWDLIBFT=libft_advanced

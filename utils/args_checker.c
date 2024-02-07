@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:12:49 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/29 10:26:53 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/07 03:05:09 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,22 +71,6 @@ int	_nsx_is_sorted(char **list)
 	return (i - 1 == ok);
 }
 
-int	overflow_catcher(char *str, int _is_negative)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (_is_negative && _nsx_strlen(str) >= 11 && str[i] > "-2147483648"[i])
-			_nsx_exit_error();
-		if (!_is_negative && _nsx_strlen(str) >= 10 && str[i] > "2147483647"[i])
-			_nsx_exit_error();
-		i++;
-	}
-	return (0);
-}
-
 void	_nsx_check_length(char *number)
 {
 	int	l;
@@ -100,7 +84,17 @@ void	_nsx_check_length(char *number)
 	if (number[0] != '-' && (_nsx_strlen(number + l) > 10
 			|| ft_atoi(number) < 0))
 		_nsx_exit_error();
-	overflow_catcher(number, number[0] == '-');
+	l = 0;
+	while (number[l])
+	{
+		if (number[0] == '-' && _nsx_strlen(number) >= 11
+			&& number[l] > "-2147483648"[l])
+			_nsx_exit_error();
+		if (number[0] != '-' && _nsx_strlen(number) >= 10
+			&& number[l] > "2147483647"[l])
+			_nsx_exit_error();
+		l++;
+	}
 }
 
 void	_nsx_num_checker(int ac, char **av)

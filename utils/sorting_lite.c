@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 22:40:12 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/06 11:30:35 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/07 02:46:03 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ void	_nsx_sort_4_5(t_nsx_node **a, t_nsx_node **b)
 	int	min_pos;
 
 	chhal = 0;
-	while(lllen(*a) != 3)
+	while (list_length(*a) != 3)
 	{
 		min_pos = _get_min_position(*a);
 		while (min_pos != 0)
 		{
-			if (min_pos > lllen(*a)/2)
+			if (min_pos > list_length(*a) / 2)
 				_nsx_instr_rra(a);
 			else
 				_nsx_instr_ra(a);
@@ -77,6 +77,6 @@ void	_nsx_sort_4_5(t_nsx_node **a, t_nsx_node **b)
 		chhal++;
 	}
 	_nsx_sort_3(a);
-	while(chhal--)
+	while (chhal--)
 		_nsx_instr_pa(a, b);
 }
