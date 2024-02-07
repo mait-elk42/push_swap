@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:41:01 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/07 20:01:00 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/07 21:28:33 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,25 +29,25 @@ void	_part2(t_nsx_node **a, t_nsx_node **b)
 
 void	_nsx_sort_adv(t_nsx_node **a, t_nsx_node **b)
 {
-	int	blen;
-	int what;
+	int	stack_b_len;
+	int offset;
 
-	blen = 0;
-	what = 16;
+	stack_b_len = 0;
+	offset = 16;
 	if (list_length(*a) >= 500)
-		what = 32;
+		offset = 32;
 	_list_indexing(*a);
 	while (*a)
 	{
-		if ((*a)->index <= blen)
+		if ((*a)->index <= stack_b_len)
 		{
 			_nsx_instr_pb(a, b);
-			blen++;
-		} else if ((*a)->index <= blen + what)
+			stack_b_len++;
+		} else if ((*a)->index <= offset + stack_b_len)
 		{
 			_nsx_instr_pb(a, b);
 			_nsx_instr_rb(b);
-			blen++;
+			stack_b_len++;
 		}else
 			_nsx_instr_ra(a);
 	}
