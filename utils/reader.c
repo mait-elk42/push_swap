@@ -6,11 +6,11 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:48:56 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/27 18:38:53 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:53:34 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include <push_swap.h>
 
 char	**_nsx_get_list(int ac, char **av)
 {

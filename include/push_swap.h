@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:44:28 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/07 20:00:38 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:40:13 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct s_nsx_node
 }	t_nsx_node;
 
 void		_nsx_args_checker(int ac, char **av);
-void		_nsx_num_checker(int ac, char **av);
+void		_nsx_2darray_checker(int ac, char **av);
 void		_nsx_exit_msg(char *msg);
 void		_nsx_exit_error(void);
 void		_nsx_exit(int status);
@@ -59,9 +59,8 @@ void		_nsx_sort_adv(t_nsx_node **a, t_nsx_node **b);
 
 t_nsx_node	*_get_last_node(t_nsx_node *head);
 int			list_length(t_nsx_node *head);
-int			get_wanted_index(t_nsx_node *b, int wanted);
+int			get_index(t_nsx_node *b, int wanted);
 void		_list_indexing(t_nsx_node *head);
-
-int			_is_not_sorted(t_nsx_node *a_head);
+int			_is_sorted(t_nsx_node *a_head);
 
 #endif

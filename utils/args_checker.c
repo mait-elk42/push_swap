@@ -6,11 +6,37 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:12:49 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/07 04:48:52 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:46:53 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include <push_swap.h>
+
+int	_nsx_local_atoi(char *num, int *error)
+{
+	long	r;
+	int		sign;
+
+	r = 0;
+	sign = 1;
+	*error = 0;
+	while ((*num >= 9 && *num <= 13) || *num == ' ')
+		num++;
+	if (*num == '-' || *num == '+')
+	{
+		if (*num == '-')
+			sign = -1;
+		num++;
+	}
+	while (*num && (*num >= '0' && *num <= '9'))
+	{
+		r = (r * 10) + (*num - 48);
+		if ((sign == 1 && r > 2147483647) || (sign == -1 && r > 2147483648))
+			return (*error = 1, 0);
+		num++;
+	}
+	return (sign * r);
+}
 
 void	_nsx_therenumbers(char *s)
 {
@@ -27,6 +53,34 @@ void	_nsx_therenumbers(char *s)
 		_nsx_exit_error();
 }
 
+void	_nsx_2darray_checker(int ac, char **av)
+{
+	char	**list;
+	int		i;
+	int		j;
+	int		atoi_error;
+
+	i = 0;
+	list = _nsx_get_list(ac, av);
+	while (list[i])
+	{
+		j = 0;
+		if (_nsx_local_atoi(list[i], &atoi_error) == 0 && atoi_error)
+		{
+			while(i--)
+				free(list[i]);
+			_nsx_exit_error();
+		}
+		while (j < i)
+			if (ft_atoi(list[i]) == ft_atoi(list[j++]))
+				_nsx_exit_error();
+		i++;
+	}
+	i = 0;
+	while (list[i])
+		free(list[i++]);
+}
+
 void	_nsx_args_checker(int ac, char **av)
 {
 	int	i;
@@ -34,8 +88,10 @@ void	_nsx_args_checker(int ac, char **av)
 
 	i = 1;
 	j = 0;
-	if (ac < 2 || !av[i][j])
+	if (ac < 2)
 		exit(0);
+	if (!av[i][j])
+		_nsx_exit_error();
 	while (av[i])
 	{
 		j = 0;
@@ -43,80 +99,13 @@ void	_nsx_args_checker(int ac, char **av)
 			_nsx_exit_error();
 		while (av[i][j])
 		{
-			if (!ft_strchr("0123456789 -+", av[i][j]))
-				_nsx_exit_error();
 			if (((ft_strchr("+-", av[i][j])) && !ft_isdigit(av[i][j +1]))
-					|| (ft_strchr("-+", av[i][j]) && ft_isdigit(av[i][j -1])))
+					|| (ft_strchr("-+", av[i][j]) && ft_isdigit(av[i][j -1]))
+					|| (!ft_strchr("0123456789 -+", av[i][j])))
 				_nsx_exit_error();
 			j++;
 		}
-		_nsx_therenumbers(av[i]);
-		i++;
+		_nsx_therenumbers(av[i++]);
 	}
-}
-
-int	_nsx_is_sorted(char **list)
-{
-	int	i;
-	int	ok;
-
-	i = 1;
-	ok = 0;
-	while (list[i])
-	{
-		if (ft_atoi(list[i]) > ft_atoi(list[i - 1]))
-			ok++;
-		i++;
-	}
-	return (i - 1 == ok);
-}
-
-void	_nsx_check_length(char *number)
-{
-	int	l;
-
-	l = 0;
-	while (number[l] && ft_strchr("+-0", number[l]))
-		l++;
-	if (number[0] == '-' && (_nsx_strlen(number + l) > 11
-			|| ft_atoi(number) > 0))
-		_nsx_exit_error();
-	if (number[0] != '-' && (_nsx_strlen(number + l) > 10
-			|| ft_atoi(number) < 0))
-		_nsx_exit_error();
-	l = 0;
-	while (number[l])
-	{
-		if (number[0] == '-' && _nsx_strlen(number) >= 11
-			&& number[l] > "-2147483648"[l])
-			_nsx_exit_error();
-		if (number[0] != '-' && _nsx_strlen(number) >= 10
-			&& number[l] > "2147483647"[l])
-			_nsx_exit_error();
-		l++;
-	}
-}
-
-void	_nsx_num_checker(int ac, char **av)
-{
-	char	**list;
-	int		i;
-	int		j;
-
-	i = 0;
-	list = _nsx_get_list(ac, av);
-	if (!list[1])
-		exit(0);
-	while (list[i])
-	{
-		j = 0;
-		_nsx_check_length(list[i]);
-		while (j < i)
-			if (ft_atoi(list[i]) == ft_atoi(list[j++]))
-				_nsx_exit_error();
-		i++;
-	}
-	if (_nsx_is_sorted(list))
-		exit(0);
-	_nsx_free_2darray(list);
+	_nsx_2darray_checker(ac, av);
 }

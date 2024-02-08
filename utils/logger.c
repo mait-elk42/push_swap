@@ -6,11 +6,11 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:32:06 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/01/29 10:25:16 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/08 10:42:29 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include <push_swap.h>
 
 void	_nsx_exit_error(void)
 {

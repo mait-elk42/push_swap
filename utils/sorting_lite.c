@@ -6,11 +6,11 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 22:40:12 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/07 02:46:03 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/08 10:42:29 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include <push_swap.h>
 
 void	_nsx_sort_2(t_nsx_node **a)
 {

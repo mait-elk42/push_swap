@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 01:16:41 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/07 20:00:08 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/08 10:44:47 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_nsx_node	*_get_last_node(t_nsx_node *head)
 	return (head);
 }
 
-int	get_wanted_index(t_nsx_node *b, int wanted)
+int	get_index(t_nsx_node *b, int wanted)
 {
 	int	i;
 
@@ -47,17 +47,17 @@ int	get_wanted_index(t_nsx_node *b, int wanted)
 	return (-1);
 }
 
-int	_is_not_sorted(t_nsx_node *a_head)
+int	_is_sorted(t_nsx_node *a_head)
 {
 	if (!a_head)
 		return (-1);
 	while (a_head->next)
 	{
 		if (a_head->num > a_head->next->num)
-			return (1);
+			return (0);
 		a_head = a_head->next;
 	}
-	return (0);
+	return (1);
 }
 
 void	_list_indexing(t_nsx_node *head)

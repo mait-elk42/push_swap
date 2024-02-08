@@ -6,11 +6,11 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:19:21 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/02 12:40:28 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:45:58 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include <push_swap.h>
 
 t_nsx_node	*_nsx_lstnew_node(int num)
 {
@@ -74,5 +74,8 @@ t_nsx_node	*_nsx_2darr2list(char **arr)
 		_nsx_lstadd_atlast(&head, _nsx_lstnew_node(ft_atoi(arr[i])));
 		i++;
 	}
+	i = 0;
+	while (arr[i])
+		free(arr[i++]);
 	return (head);
 }
