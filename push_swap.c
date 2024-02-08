@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 18:38:04 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/08 18:48:29 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/08 22:27:56 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ int	main(int ac, char **av)
 	list_length = 0;
 	_nsx_args_checker(ac, av);
 	numbers = _nsx_get_list(ac, av);
-	while (numbers[list_length++])
+	while (numbers[list_length])
 		list_length++;
 	a = _nsx_2darr2list(numbers);
 	if (_is_sorted(a))
-		free (0);
+		return (0);
 	if (list_length == 2)
 		_nsx_sort_2(&a);
 	else if (list_length == 3)
