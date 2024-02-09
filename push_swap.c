@@ -6,17 +6,12 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 18:38:04 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/08 22:27:56 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/09 11:20:08 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
-
-void	freeeee()
-{
-	
-}
 
 int	main(int ac, char **av)
 {
@@ -34,7 +29,7 @@ int	main(int ac, char **av)
 		list_length++;
 	a = _nsx_2darr2list(numbers);
 	if (_is_sorted(a))
-		return (0);
+		return (_nsx_lstfree(a), 0);
 	if (list_length == 2)
 		_nsx_sort_2(&a);
 	else if (list_length == 3)
@@ -43,4 +38,6 @@ int	main(int ac, char **av)
 		_nsx_sort_4_5(&a, &b);
 	else
 		_nsx_sort_adv(&a, &b);
+	_nsx_lstfree(a);
+	return (0);
 }

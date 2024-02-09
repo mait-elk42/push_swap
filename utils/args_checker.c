@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:12:49 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/08 18:46:53 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/09 10:12:46 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	_nsx_2darray_checker(int ac, char **av)
 		j = 0;
 		if (_nsx_local_atoi(list[i], &atoi_error) == 0 && atoi_error)
 		{
-			while(i--)
+			while (i--)
 				free(list[i]);
 			_nsx_exit_error();
 		}

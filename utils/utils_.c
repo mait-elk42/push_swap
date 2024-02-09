@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   logger.c                                           :+:      :+:    :+:   */
+/*   utils_.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/23 10:32:06 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/08 10:42:29 by mait-elk         ###   ########.fr       */
+/*   Created: 2024/01/23 11:48:56 by mait-elk          #+#    #+#             */
+/*   Updated: 2024/02/09 10:12:28 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,30 @@ void	_nsx_exit_error(void)
 	exit(-1);
 }
 
-void	_nsx_exit_msg(char *msg)
+char	**_nsx_get_list(int ac, char **av)
 {
-	ft_putstr_fd(msg, 2);
-	exit(0);
-}
+	char	**list;
+	int		i;
+	char	*all_av;
+	char	*tmp;
 
-void	_nsx_exit(int status)
-{
-	exit(status);
+	all_av = NULL;
+	i = 1;
+	while (i < ac)
+	{
+		tmp = ft_strjoin(all_av, av[i]);
+		if (!tmp)
+			_nsx_exit_error();
+		free(all_av);
+		all_av = ft_strjoin(tmp, " ");
+		if (!tmp)
+			_nsx_exit_error();
+		free(tmp);
+		i++;
+	}
+	list = ft_split(all_av, ' ');
+	free(all_av);
+	if (!list)
+		exit(0);
+	return (list);
 }

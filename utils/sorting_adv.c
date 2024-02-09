@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:41:01 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/08 19:48:15 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/09 09:46:07 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	_nsx_sort_adv(t_nsx_node **a, t_nsx_node **b)
 	int	offset;
 
 	offset = 16;
-	if (list_length(*a) >= 500)
+	if (list_length(*a) >= 300)
 		offset = 32;
 	_list_indexing(*a);
 	while (*a)

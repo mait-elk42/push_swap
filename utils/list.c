@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:19:21 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/08 18:45:58 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/09 10:26:32 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ t_nsx_node	*_nsx_lstnew_node(int num)
 {
 	t_nsx_node	*node;
 
-	node = _nsx_p_malloc(sizeof(node));
+	node = malloc(sizeof(node));
+	if (!node)
+		return (0);
 	node->num = num;
 	node->index = 0;
 	node->next = NULL;
@@ -55,23 +57,37 @@ void	_nsx_lstadd_atbegin(t_nsx_node **head, t_nsx_node *new_head)
 
 void	_nsx_lstfree(t_nsx_node *head)
 {
+	t_nsx_node	*save;
+
 	while (head)
 	{
+		save = head->next;
 		free(head);
-		head = head->next;
+		head = save;
 	}
 }
 
 t_nsx_node	*_nsx_2darr2list(char **arr)
 {
 	t_nsx_node	*head;
+	t_nsx_node	*tmpnode;
 	int			i;
 
 	i = 0;
 	head = NULL;
 	while (arr[i])
 	{
-		_nsx_lstadd_atlast(&head, _nsx_lstnew_node(ft_atoi(arr[i])));
+		tmpnode = _nsx_lstnew_node(ft_atoi(arr[i]));
+		if (!tmpnode)
+		{
+			while (head)
+			{
+				free(head);
+				head = head->next;
+			}
+			_nsx_exit_error();
+		}
+		_nsx_lstadd_atlast(&head, tmpnode);
 		i++;
 	}
 	i = 0;

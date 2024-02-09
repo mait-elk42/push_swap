@@ -6,14 +6,14 @@
 #    By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 15:38:27 by mait-elk          #+#    #+#              #
-#    Updated: 2024/02/08 18:37:02 by mait-elk         ###   ########.fr        #
+#    Updated: 2024/02/09 11:12:40 by mait-elk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFLAGS= -Wall -Werror -Wextra
 HPATH= include
-UTILS= utils/args_checker.c utils/logger.c utils/reader.c \
-	utils/list.c utils/protect.c utils/instractions/instr01.c utils/instractions/instr02.c \
+UTILS= utils/args_checker.c utils/utils_.c \
+	utils/list.c utils/instractions/instr01.c utils/instractions/instr02.c \
 	utils/instractions/instr03.c utils/sorting_lite.c utils/sorting_adv.c \
 	utils/list_controller.c
 
@@ -24,7 +24,7 @@ CC= cc
 NAME= push_swap
 
 all: $(NAME)
-
+	@make -C libft_advanced
 $(NAME): $(LIBFT) $(O_UTILS) push_swap.o
 	$(CC) push_swap.o $(LIBFT) $(O_UTILS) -o $(NAME)
 
