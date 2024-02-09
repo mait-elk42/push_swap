@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 10:20:27 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/09 19:08:13 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/09 22:55:13 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,4 @@ void	_nsx_instr_rrr(t_nsx_node **a, t_nsx_node **b)
 	_nsx_lstadd_atbegin(b, node->next);
 	*b = node->next;
 	node->next = 0;
-	ft_printf("rrr\n");
 }

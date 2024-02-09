@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 22:57:35 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/09 19:07:50 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/09 22:54:57 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	_nsx_instr_sa(t_nsx_node **a)
 	(*a) = (*a)->next;
 	tmp->next = (*a)->next;
 	(*a)->next = tmp;
-	ft_printf("sa\n");
 }
 
 void	_nsx_instr_sb(t_nsx_node **b)
@@ -35,7 +34,6 @@ void	_nsx_instr_sb(t_nsx_node **b)
 	(*b) = (*b)->next;
 	tmp->next = (*b)->next;
 	(*b)->next = tmp;
-	ft_printf("sb\n");
 }
 
 void	_nsx_instr_ss(t_nsx_node **a, t_nsx_node **b)
@@ -54,7 +52,6 @@ void	_nsx_instr_ss(t_nsx_node **a, t_nsx_node **b)
 	(*b) = (*b)->next;
 	tmp->next = (*b)->next;
 	(*b)->next = tmp;
-	ft_printf("ss\n");
 }
 
 void	_nsx_instr_pa(t_nsx_node **a, t_nsx_node **b)
@@ -67,7 +64,6 @@ void	_nsx_instr_pa(t_nsx_node **a, t_nsx_node **b)
 	(*b) = (*b)->next;
 	node->next = 0;
 	_nsx_lstadd_atbegin(a, node);
-	ft_printf("pa\n");
 }
 
 void	_nsx_instr_pb(t_nsx_node **a, t_nsx_node **b)
@@ -80,5 +76,4 @@ void	_nsx_instr_pb(t_nsx_node **a, t_nsx_node **b)
 	(*a) = (*a)->next;
 	node->next = 0;
 	_nsx_lstadd_atbegin(b, node);
-	ft_printf("pb\n");
 }
