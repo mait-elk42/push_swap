@@ -6,12 +6,11 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 18:38:04 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/09 11:20:08 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/09 18:01:47 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include <stdio.h>
+#include <push_swap.h>
 
 int	main(int ac, char **av)
 {

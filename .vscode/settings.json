@@ -12,6 +12,10 @@
 		"string_view": "c",
 		"unordered_map": "c",
 		"utility": "c",
-		"vector": "c"
+		"vector": "c",
+		"stdio.h": "c",
+		"push_swap_bonus.h": "c",
+		"ratio": "c",
+		"algorithm": "c"
 	}
 }
