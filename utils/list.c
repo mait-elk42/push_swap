@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:19:21 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/09 10:26:32 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/10 14:22:51 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,18 +80,12 @@ t_nsx_node	*_nsx_2darr2list(char **arr)
 		tmpnode = _nsx_lstnew_node(ft_atoi(arr[i]));
 		if (!tmpnode)
 		{
-			while (head)
-			{
-				free(head);
-				head = head->next;
-			}
+			_nsx_lstfree(head);
 			_nsx_exit_error();
 		}
 		_nsx_lstadd_atlast(&head, tmpnode);
 		i++;
 	}
-	i = 0;
-	while (arr[i])
-		free(arr[i++]);
+	_nsx_2darray_free(arr);
 	return (head);
 }

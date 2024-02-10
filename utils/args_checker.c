@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:12:49 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/09 18:01:32 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/10 14:16:24 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,19 +66,13 @@ void	_nsx_2darray_checker(int ac, char **av)
 	{
 		j = 0;
 		if (_nsx_local_atoi(list[i], &atoi_error) == 0 && atoi_error)
-		{
-			while (i--)
-				free(list[i]);
-			_nsx_exit_error();
-		}
+			(_nsx_2darray_free(list), _nsx_exit_error());
 		while (j < i)
 			if (ft_atoi(list[i]) == ft_atoi(list[j++]))
-				_nsx_exit_error();
+				(_nsx_2darray_free(list), _nsx_exit_error());
 		i++;
 	}
-	i = 0;
-	while (list[i])
-		free(list[i++]);
+	_nsx_2darray_free(list);
 }
 
 void	_nsx_args_checker(int ac, char **av)
@@ -99,8 +93,8 @@ void	_nsx_args_checker(int ac, char **av)
 			_nsx_exit_error();
 		while (av[i][j])
 		{
-			if (((ft_strchr("+-", av[i][j])) && !ft_isdigit(av[i][j +1]))
-					|| (ft_strchr("-+", av[i][j]) && ft_isdigit(av[i][j -1]))
+			if (((ft_strchr("+-", av[i][j])) && !ft_isdigit(av[i][j + 1]))
+					|| (ft_strchr("-+", av[i][j]) && ft_isdigit(av[i][j - 1]))
 					|| (!ft_strchr("0123456789 -+", av[i][j])))
 				_nsx_exit_error();
 			j++;

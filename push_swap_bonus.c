@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 18:38:04 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/09 18:56:16 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/10 13:30:52 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	_nsx_read_instractions(t_nsx_node **a, t_nsx_node **b)
 	{
 		if (_nsx_execute_command(command, a, b) == -1)
 		{
+			free(command);
 			_nsx_lstfree(*a);
 			_nsx_lstfree(*b);
 			ft_printf("Error\n");

@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:44:28 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/09 18:02:19 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/10 14:13:33 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ int			list_length(t_nsx_node *head);
 int			get_index(t_nsx_node *b, int wanted);
 void		_list_indexing(t_nsx_node *head);
 int			_is_sorted(t_nsx_node *a_head);
+void		_nsx_2darray_free(char **arr);
 
 #endif

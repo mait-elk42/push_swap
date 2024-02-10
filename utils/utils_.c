@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:48:56 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/09 10:12:28 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/10 14:19:06 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,21 @@ void	_nsx_exit_error(void)
 {
 	ft_putstr_fd("Error\n", 2);
 	exit(-1);
+}
+
+void	_nsx_2darray_free(char **arr)
+{
+	int	i;
+
+	i = 0;
+	if (arr == NULL)
+		return ;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
 }
 
 char	**_nsx_get_list(int ac, char **av)

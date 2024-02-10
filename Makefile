@@ -6,7 +6,7 @@
 #    By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 15:38:27 by mait-elk          #+#    #+#              #
-#    Updated: 2024/02/09 18:00:20 by mait-elk         ###   ########.fr        #
+#    Updated: 2024/02/10 12:49:04 by mait-elk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,7 @@ UTILS= utils/args_checker.c utils/utils_.c \
 O_UTILS= $(UTILS:.c=.o)
 UTILS_BONUS= utils_bonus/args_checker_bonus.c utils_bonus/utils__bonus.c \
 	utils_bonus/list_bonus.c utils_bonus/instractions/instr01_bonus.c utils_bonus/instractions/instr02_bonus.c \
-	utils_bonus/instractions/instr03_bonus.c utils_bonus/sorting_lite_bonus.c utils_bonus/sorting_adv_bonus.c \
-	utils_bonus/list_controller_bonus.c
+	utils_bonus/instractions/instr03_bonus.c utils_bonus/list_controller_bonus.c
 O_UTILS_BONUS= $(UTILS_BONUS:.c=.o)
 LIBFT_SRCS= libft_advanced/ft_atoi.c \
 			libft_advanced/ft_itoa.c \
