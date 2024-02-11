@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 11:48:56 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/10 14:20:36 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/11 11:41:11 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	**_nsx_get_list(int ac, char **av)
 	{
 		tmp = ft_strjoin(all_av, av[i]);
 		if (!tmp)
-			_nsx_exit_error();
+			(free(all_av), _nsx_exit_error());
 		free(all_av);
 		all_av = ft_strjoin(tmp, " ");
 		if (!tmp)
