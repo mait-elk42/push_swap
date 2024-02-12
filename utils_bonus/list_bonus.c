@@ -6,7 +6,7 @@
 /*   By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:19:21 by mait-elk          #+#    #+#             */
-/*   Updated: 2024/02/11 12:40:12 by mait-elk         ###   ########.fr       */
+/*   Updated: 2024/02/12 09:06:15 by mait-elk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_nsx_node	*_nsx_lstnew_node(int num)
 
 	node = malloc(sizeof(node));
 	if (!node)
-		return (0);
+		return (NULL);
 	node->num = num;
 	node->index = 0;
 	node->next = NULL;

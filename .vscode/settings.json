@@ -16,6 +16,7 @@
 		"stdio.h": "c",
 		"push_swap_bonus.h": "c",
 		"ratio": "c",
-		"algorithm": "c"
+		"algorithm": "c",
+		"libft.h": "c"
 	}
 }

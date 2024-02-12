@@ -6,7 +6,7 @@
 #    By: mait-elk <mait-elk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 15:38:27 by mait-elk          #+#    #+#              #
-#    Updated: 2024/02/11 12:00:44 by mait-elk         ###   ########.fr        #
+#    Updated: 2024/02/12 10:38:34 by mait-elk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,3 +105,5 @@ fclean: clean
 	rm -f $(NAME) $(BONUS)
 
 re: fclean all
+
+.PHONY: clean
